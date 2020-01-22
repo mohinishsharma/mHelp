@@ -22,8 +22,8 @@ namespace mHelp\HTML {
             $this->selfTag = $self;
             if(count($options)>0)
             {
-                $this->eclass = new HTMLclass(array_key_exists("class")?$options["class"]:"m".$tag);
-                $this->eattr = new HTMLattributes(array_key_exists("id")?$options["id"]:"m_".$tag);
+                $this->eclass = new HTMLclass(array_key_exists("class",$options)?$options["class"]:"m".$tag);
+                $this->eattr = new HTMLattributes(array_key_exists("id", $options)?$options["id"]:"m_".$tag);
             }
         }
 

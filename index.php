@@ -15,17 +15,15 @@
         "port"=>"3307", // port is opitonal and not used in this implementation
         "username"=>"root",
         "password"=>"",
-        "database"=>"edusearch"
+        "database"=>"staples"
     );
 
     // Coulmn name and Column display name mapping 
     // => with key as column name and value as column display name
     $c = array(
-        "id"=>"#",
-        "name"=>"Paper name",
-        "description"=>"Description",
-        "dtimes"=>"No. of Downloads",
-        "type"=>"Type"
+        "memberID"=>"#",
+        "username"=>"Username",
+        "password"=>"Password"
     );
 
     $v = new mHelp($d); // mhelp object
@@ -42,6 +40,6 @@
     <title>mHELP Demo</title>
 </head>
 <body>
-    <?= $v->make_table("softwares",$c)?>
+    <?= $v->make_table("members",$c)?>
 </body>
 </html>

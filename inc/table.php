@@ -10,7 +10,7 @@
 
 namespace mHelp\Table {
 
-    include 'html.php';
+    include __DIR__.'/html.php';
 
     use mHelp\HTML\HTMLclass as HTMLclass;
     use mHelp\HTML\HTMLattributes as HTMLattributes;
@@ -39,7 +39,7 @@ namespace mHelp\Table {
             $this->name = ($table_name == "")?"Table":$table_name; // setting table name
             $this->id .= (array_key_exists("id",$options))?$options["id"]:$table_name; // set table id
             $this->theme = (array_key_exists("theme",$options))?$options["theme"]:$this->theme; // Setting theme of table
-            $this->class .= (array_key_exists("class",$options))?" ".$option["class"]:""; // Settting class of table
+            $this->class .= (array_key_exists("class",$options))?" ".$options["class"]:""; // Settting class of table
             $this->eclass = new HTMLclass($this->class); // creating class object
             $this->eattr = new HTMLattributes("id",$this->id); // creating attr object
             if(count($head_name)> 0)
@@ -226,7 +226,7 @@ namespace mHelp\Table {
         public function __construct($rows = null) {
             if($rows instanceof Row)
             {
-                $rows = $rows->get_self();
+                $rows = $rows->get_HTML();
                 array_push($this->rows,$rows);
             }
             elseif(is_array($rows))

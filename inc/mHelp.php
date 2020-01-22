@@ -11,7 +11,7 @@
 
 namespace mHelp {
     
-    include 'table.php';
+    include __DIR__.'/table.php';
     use mHelp\Table\Table as table;
     use mHelp\Table\Row as row;
     use mHelp\Table\Cell as cell;
@@ -96,7 +96,7 @@ namespace mHelp {
                     return ($a["error_count"]>0)?false:true;
                     break;
                 default:
-                    throw new Exception("No type was specified", 1);
+                    throw new \Exception("No type was specified", 1);
             }
             return false;
         } // End verify_field
